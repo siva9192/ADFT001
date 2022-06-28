@@ -1,10 +1,17 @@
 {
-	"name": "Schedule Trigger",
+	"name": "DailySchedule Trigger",
 	"properties": {
 		"description": "daily",
 		"annotations": [],
 		"runtimeState": "Started",
-		"pipelines": [],
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "CopyData",
+					"type": "PipelineReference"
+				}
+			}
+		],
 		"type": "ScheduleTrigger",
 		"typeProperties": {
 			"recurrence": {
