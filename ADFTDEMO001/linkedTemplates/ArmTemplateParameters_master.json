@@ -5,6 +5,9 @@
 		"factoryName": {
 			"value": "ADFTDEMO001"
 		},
+		"Linkedservice_SqlServer_connectionString": {
+			"value": ""
+		},
 		"Linkedservice_StorageADFDemo_connectionString": {
 			"value": ""
 		},

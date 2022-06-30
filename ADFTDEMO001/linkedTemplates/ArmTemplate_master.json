@@ -7,6 +7,10 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "ADFTDEMO001"
 		},
+		"Linkedservice_SqlServer_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'Linkedservice_SqlServer'"
+		},
 		"Linkedservice_StorageADFDemo_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'Linkedservice_StorageADFDemo'"
@@ -40,6 +44,9 @@
 					},
 					"Linkedservice_StorageADFDemo_connectionString": {
 						"value": "[parameters('Linkedservice_StorageADFDemo_connectionString')]"
+					},
+					"Linkedservice_SqlServer_connectionString": {
+						"value": "[parameters('Linkedservice_SqlServer_connectionString')]"
 					}
 				}
 			},
