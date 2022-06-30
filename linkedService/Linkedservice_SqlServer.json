@@ -1,0 +1,29 @@
+{
+	"name": "Linkedservice_SqlServer",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"parameters": {
+			"Servername": {
+				"type": "string"
+			},
+			"Databasename": {
+				"type": "string"
+			},
+			"Username": {
+				"type": "string"
+			},
+			"Password": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"connectionString": "Integrated Security=False;Data Source=@{linkedService().Servername};Initial Catalog=@{linkedService().Databasename};User ID=@{linkedService().Username};Password=@{linkedService().Password}"
+		},
+		"connectVia": {
+			"referenceName": "IR-Self-Hosted",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
