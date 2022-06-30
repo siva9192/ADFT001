@@ -35,14 +35,26 @@
 			},
 			"password": {
 				"type": "string"
+			},
+			"schema": {
+				"type": "string"
+			},
+			"Table": {
+				"type": "string"
 			}
 		},
 		"annotations": [],
 		"type": "SqlServerTable",
 		"schema": [],
 		"typeProperties": {
-			"schema": "dbo",
-			"table": "EMP2"
+			"schema": {
+				"value": "@dataset().schema",
+				"type": "Expression"
+			},
+			"table": {
+				"value": "@dataset().Table",
+				"type": "Expression"
+			}
 		}
 	}
 }

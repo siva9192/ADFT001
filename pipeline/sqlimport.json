@@ -44,7 +44,9 @@
 							"Servername": "DESKTOP-MCIB97H\\SIVA",
 							"DatabaseName": "companys",
 							"Username": "siva",
-							"password": "siva"
+							"password": "siva",
+							"schema": "dbo",
+							"Table": "EMP"
 						}
 					}
 				],
@@ -56,7 +58,9 @@
 							"Servername": "DESKTOP-MCIB97H\\SIVA",
 							"DatabaseName": "companys",
 							"Username": "siva",
-							"password": "siva"
+							"password": "siva",
+							"schema": "dbo",
+							"Table": "EMP2"
 						}
 					}
 				]
