@@ -41,8 +41,8 @@
 		"type": "SqlServerTable",
 		"schema": [],
 		"typeProperties": {
-			"schema": "[dbo]",
-			"table": "[EMP2]"
+			"schema": "dbo",
+			"table": "EMP2"
 		}
 	}
 }
