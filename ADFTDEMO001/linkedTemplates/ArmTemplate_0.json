@@ -233,8 +233,8 @@
 				"type": "SqlServerTable",
 				"schema": [],
 				"typeProperties": {
-					"schema": "[[dbo]",
-					"table": "[[EMP2]"
+					"schema": "dbo",
+					"table": "EMP2"
 				}
 			},
 			"dependsOn": [
@@ -269,8 +269,7 @@
 							"sink": {
 								"type": "SqlServerSink",
 								"writeBehavior": "insert",
-								"sqlWriterUseTableLock": false,
-								"tableOption": "autoCreate"
+								"sqlWriterUseTableLock": false
 							},
 							"enableStaging": false,
 							"translator": {
