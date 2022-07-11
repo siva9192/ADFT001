@@ -21,7 +21,7 @@
 				],
 				"typeProperties": {
 					"dataset": {
-						"referenceName": "Binary1",
+						"referenceName": "OutputDataset",
 						"type": "DatasetReference"
 					},
 					"logStorageSettings": {
