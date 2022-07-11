@@ -37,7 +37,16 @@
 							"secureOutput": false,
 							"secureInput": false
 						},
-						"userProperties": [],
+						"userProperties": [
+							{
+								"name": "Source",
+								"value": "adfdemo/input/demo.txt"
+							},
+							{
+								"name": "Destination",
+								"value": "adfdemo/output/demo.txt"
+							}
+						],
 						"typeProperties": {
 							"source": {
 								"type": "BinarySource",
@@ -132,7 +141,9 @@
 									"Servername": "DESKTOP-MCIB97H\\SIVA",
 									"DatabaseName": "companys",
 									"Username": "siva",
-									"password": "siva"
+									"password": "siva",
+									"schema": "dbo",
+									"Table": "EMP"
 								}
 							}
 						],
@@ -144,7 +155,9 @@
 									"Servername": "DESKTOP-MCIB97H\\SIVA",
 									"DatabaseName": "companys",
 									"Username": "siva",
-									"password": "siva"
+									"password": "siva",
+									"schema": "dbo",
+									"Table": "EMP2"
 								}
 							}
 						]
@@ -247,14 +260,26 @@
 					},
 					"password": {
 						"type": "string"
+					},
+					"schema": {
+						"type": "string"
+					},
+					"Table": {
+						"type": "string"
 					}
 				},
 				"annotations": [],
 				"type": "SqlServerTable",
 				"schema": [],
 				"typeProperties": {
-					"schema": "dbo",
-					"table": "EMP2"
+					"schema": {
+						"value": "@dataset().schema",
+						"type": "Expression"
+					},
+					"table": {
+						"value": "@dataset().Table",
+						"type": "Expression"
+					}
 				}
 			},
 			"dependsOn": [
