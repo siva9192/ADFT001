@@ -372,6 +372,85 @@
 				"typeProperties": {}
 			},
 			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DeleteActivity')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Delete1",
+						"type": "Delete",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [
+							{
+								"name": "Delete",
+								"value": "Deleted all files from Output folder"
+							}
+						],
+						"typeProperties": {
+							"dataset": {
+								"referenceName": "Binary1",
+								"type": "DatasetReference",
+								"parameters": {}
+							},
+							"logStorageSettings": {
+								"linkedServiceName": {
+									"referenceName": "Linkedservice_StorageADFDemo",
+									"type": "LinkedServiceReference"
+								},
+								"path": "adfdemo"
+							},
+							"enableLogging": true,
+							"storeSettings": {
+								"type": "AzureBlobStorageReadSettings",
+								"recursive": true,
+								"enablePartitionDiscovery": false
+							}
+						}
+					}
+				],
+				"policy": {
+					"elapsedTimeMetric": {},
+					"cancelAfter": {}
+				},
+				"annotations": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/Binary1')]",
+				"[concat(variables('factoryId'), '/linkedServices/Linkedservice_StorageADFDemo')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Binary1')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "Linkedservice_StorageADFDemo",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Binary",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"folderPath": "output",
+						"container": "adfdemo"
+					}
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/Linkedservice_StorageADFDemo')]"
+			]
 		}
 	]
 }
