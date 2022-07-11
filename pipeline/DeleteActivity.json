@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Delete1",
+				"name": "Delete",
 				"type": "Delete",
 				"dependsOn": [],
 				"policy": {
