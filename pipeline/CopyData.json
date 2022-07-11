@@ -13,7 +13,16 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": [],
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "adfdemo/input/demo.txt"
+					},
+					{
+						"name": "Destination",
+						"value": "adfdemo/output/demo.txt"
+					}
+				],
 				"typeProperties": {
 					"source": {
 						"type": "BinarySource",
