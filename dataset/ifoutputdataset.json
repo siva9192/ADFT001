@@ -1,0 +1,26 @@
+{
+	"name": "ifoutputdataset",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Linkedservice_StorageADFDemo",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"outputfolder": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"folderPath": {
+					"value": "@dataset().outputfolder",
+					"type": "Expression"
+				},
+				"container": "adfdemo"
+			}
+		}
+	}
+}
